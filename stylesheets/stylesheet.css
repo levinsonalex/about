@@ -313,6 +313,17 @@ Full-Width Styles
   text-shadow: #111 0px 0px 10px;
 }
 
+#headshot {
+  position: absolute;
+  width: 210px;
+  z-index: 10;
+  bottom: -40px;
+  right: 0;
+  height: 70px;
+  background: url('../images/headshot.jpg') no-repeat 0% 90%;
+}
+
+
 #downloads {
   position: absolute;
   width: 210px;
@@ -375,6 +386,10 @@ Small Device Styles
 @media screen and (max-width: 480px) {
   body {
     font-size:14px;
+  }
+
+  #headshot {
+    display: none;
   }
 
   #downloads {
