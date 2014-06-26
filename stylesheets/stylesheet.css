@@ -315,11 +315,11 @@ Full-Width Styles
 
 #headshot {
   position: absolute;
-  width: 210px;
+  width: 169px;
   z-index: 10;
   bottom: -40px;
   right: 0;
-  height: 70px;
+  height: 193px;
   background: url('../images/headshot.jpg') no-repeat 0% 90%;
 }
 
