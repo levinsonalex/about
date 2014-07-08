@@ -325,28 +325,28 @@ Full-Width Styles
 
 #pikachu {
 	position: static;
-	width: 169px;
+	width: 2322px;
 	z-index: 10;
 	left: 0;
-	height: 193px;
+	height: 4128px;
 	background: url('../images/pikachu.jpg') no-repeat 0% 90%;
 }
 
 #squirtle {
 	position: static;
-	width: 169px;
+	width: 2322px;
 	z-index: 10;
 	left: 0;
-	height: 193px;
+	height: 4128px;
 	background: url('../images/squirtle.jpg') no-repeat 0% 90%;
 }
 
 #charmander {
 	position: static;
-	width: 169px;
+	width: 2322px;
 	z-index: 10;
 	left: 0;
-	height: 193px;
+	height: 4128px;
 	background: url('../images/charmander.jpg') no-repeat 0% 90%;
 }
 
