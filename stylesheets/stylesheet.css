@@ -327,7 +327,7 @@ Full-Width Styles
 	position: absolute;
 	width: 169px;
 	z-index: 10;
-	bottom: 0px;
+	bottom: 100px;
 	right: 0;
 	height: 193px;
 	background: url('../images/headshot.jpg') no-repeat 0% 90%;
