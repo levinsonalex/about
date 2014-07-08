@@ -325,8 +325,8 @@ Full-Width Styles
 
 #pikachu {
 	position: static;
-	width: 450px;
-	height: 800px;
+	width: 250px;
+	height: 400px;
 	z-index: 10;
 	left: 0;
 	background: url('../images/pikachu.jpg') no-repeat 0% 90%;
