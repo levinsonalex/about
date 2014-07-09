@@ -337,7 +337,7 @@ Full-Width Styles
 	width: 225px;
 	height: 400px;
 	z-index: 10;
-	left: 0;
+	right: inherit;
 	background: url('../images/squirtle.jpg') no-repeat 0% 90%;
 }
 
