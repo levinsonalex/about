@@ -324,34 +324,6 @@ Full-Width Styles
 	background: url('../images/headshot.jpg') no-repeat 0% 90%;
 }
 
-#pikachu {
-	position: static;
-	width: 250px;
-	height: 400px;
-	z-index: 10;
-	left: 0;
-	background: url('../images/pikachu.jpg') no-repeat 0% 90%;
-}
-
-#squirtle {
-	position: static;
-	width: 225px;
-	height: 400px;
-	z-index: 10;
-	right: inherit;
-	background: url('../images/squirtle.jpg') no-repeat 0% 90%;
-}
-
-#charmander {
-	position: static;
-	width: 2322px;
-	z-index: 10;
-	left: 0;
-	height: 4128px;
-	background: url('../images/charmander.jpg') no-repeat 0% 90%;
-}
-
-
 #downloads {
 	position: absolute;
 	width: 210px;
@@ -360,6 +332,13 @@ Full-Width Styles
 	right: 0;
 	height: 70px;
 	background: url('../images/icon_download.png') no-repeat 0% 90%;
+}
+
+.timeIsMoneyStyle {
+	font-weight: 700;
+	text-align: center; 
+	font-size: 50px; 
+	color: #007edf;
 }
 
 /*
@@ -406,7 +385,6 @@ Full-Width Styles
 #footer_wrap {
 	background: #212121;
 }
-
 
 
 /*******************************************************************************

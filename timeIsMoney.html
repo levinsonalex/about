@@ -11,26 +11,48 @@ ga('send', 'pageview');
 </script>
 
 <script>
-function startTime(){
-	var today=new Date();
-	var h = today.getHours();
-	var m = today.getMinutes();
-	var s = today.getSeconds();
-	m = checkTime(m);
-	s = checkTime(s);
-	if(today.getHours() > 12){
+var startDate;
+var wageVar;
+
+function buttonPress(){
+	startDate = new Date();
+	wageVar = document.getElementById('wage').value;
+	refreshTime();
+}
+
+function refreshTime(){
+	var nowTime = new Date();
+	var h = nowTime.getHours();
+	var m = nowTime.getMinutes();
+	var s = nowTime.getSeconds();
+	m = fixTime(m);
+	s = fixTime(s);
+	if(nowTime.getHours() > 12){
 		s = s + " PM";
 		h = h % 12;
 	} else {
 		s = s + " AM";
 	}
-	document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-	var t = setTimeout(function(){startTime()},111);
+	document.getElementById('clockText').innerHTML = h + ":" + m + ":" + s;
+
+	var diff = nowTime.getTime() - startDate.getTime();
+	diff = diff / 1000 / 60 / 60;
+
+	document.getElementById('test').innerHTML = "$" + fixCash(Math.round(diff * wageVar * 100) / 100);
+
+	var t = setTimeout(function(){refreshTime()},500);
 }
 
-function checkTime(i){
+function fixTime(i){
 	if (i < 10) {
 		i = "0" + i;
+	}
+	return i;
+}
+
+function fixCash(i){
+	if(i == 0){
+		i = "0.00"
 	}
 	return i;
 }
@@ -49,7 +71,7 @@ function checkTime(i){
 	<title>Alex Levinson | Time is Money</title>
 </head>
 
-<body onload="startTime()">
+<body onload="refreshTime(); buttonPress();">
 
 	<!-- HEADER -->
 	<div id="header_wrap" class="outer">
@@ -72,7 +94,12 @@ function checkTime(i){
 	<div id="main_content_wrap" class="outer" style="min-height:500px">
 		<section id="main_content" class="inner">
 			<div>
-				<h1 style="text-align: center; font-size: 50px; color: #007edf;" id="txt"></h1>
+				<div class="timeIsMoneyStyle" id="clockText"></div>
+				<div style="text-align: center"><button style="border-radius: 10px" class="timeIsMoneyStyle" onclick="buttonPress()">Click Here</button></div>
+				<div style="text-align: center">
+					$<input type="text" id="wage" value="10.00"></input>/hr
+				</div>
+				<div class="timeIsMoneyStyle" id="test"></div>
 			</div>
 		</section>
 	</div>
