@@ -38,7 +38,8 @@ function refreshTime(){
 	var diff = nowTime.getTime() - startDate.getTime();
 	diff = diff / 1000 / 60 / 60;
 
-	document.getElementById('test').innerHTML = "$" + fixCash(Math.round(diff * wageVar * 100) / 100);
+	document.getElementById('test').innerHTML = "$" + fixCash(Math.round(diff * wageVar * 100) / 100).replace(^[0-9]*\.[0-9]{1}$
+);
 
 	var t = setTimeout(function(){refreshTime()},500);
 }
@@ -51,9 +52,10 @@ function fixTime(i){
 }
 
 function fixCash(i){
-	if(i == 0){
-		i = "0.00"
-	}
+	var patt = new RegExp("^[0-9]*\.[0-9]{2}$");
+    if(!patt.test(i)){
+    	i = i + "0";
+    }
 	return i;
 }
 
@@ -85,7 +87,7 @@ function fixCash(i){
 				Time is Money
 			</h1>
 			<h2 id="project_tagline">
-				A tracker of unproductivity
+				Enter your hourly wage, and watch as you earn money!
 			</h2>
 
 		</header>
