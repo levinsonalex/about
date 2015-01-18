@@ -38,10 +38,9 @@ function refreshTime(){
 	var diff = nowTime.getTime() - startDate.getTime();
 	diff = diff / 1000 / 60 / 60;
 
-	document.getElementById('test').innerHTML = "$" + fixCash(Math.round(diff * wageVar * 100) / 100).replace(^[0-9]*\.[0-9]{1}$
-);
+	document.getElementById('test').innerHTML = "$" + fixCash(Math.round(diff * wageVar * 100) / 100);
 
-	var t = setTimeout(function(){refreshTime()},500);
+	var t = setTimeout(function(){refreshTime()},10);
 }
 
 function fixTime(i){
@@ -53,9 +52,11 @@ function fixTime(i){
 
 function fixCash(i){
 	var patt = new RegExp("^[0-9]*\.[0-9]{2}$");
-    if(!patt.test(i)){
-    	i = i + "0";
-    }
+	if(i == 0){
+		i = "0.00";
+	} else if(!patt.test(i)){
+		i = i + "0";
+	}
 	return i;
 }
 
@@ -97,11 +98,13 @@ function fixCash(i){
 		<section id="main_content" class="inner">
 			<div>
 				<div class="timeIsMoneyStyle" id="clockText"></div>
-				<div style="text-align: center"><button style="border-radius: 10px" class="timeIsMoneyStyle" onclick="buttonPress()">Click Here</button></div>
-				<div style="text-align: center">
-					$<input type="text" id="wage" value="10.00"></input>/hr
+				<div style="text-align: center"><button style="border-radius: 10px" class="timeIsMoneyStyle" onclick="buttonPress()">Start Cash Clock</button></div>
+				<div style="text-align: center" class="timeIsMoneyStyle">
+					$<input type="text" id="wage" value="10.00" size="8" class="timeIsMoneyStyle"></input>/hr
 				</div>
-				<div class="timeIsMoneyStyle" id="test"></div>
+				<div class="timeIsMoneyCashStyle">
+					Cash Earned: <u id="test" class="timeIsMoneyCashStyle"></u>
+				</div>
 			</div>
 		</section>
 	</div>
